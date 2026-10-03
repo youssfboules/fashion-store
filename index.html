@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>عبّر — ستايل بيحكي عنك</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#app">تخطي للمحتوى</a>
+<header class="nav" id="nav">
+  <a href="#/home" class="logo" aria-label="عبّر - الرئيسية">عبّر</a>
+  <nav id="menu" class="menu" aria-label="القائمة الرئيسية">
+    <a href="#/home" data-nav="home">الرئيسية</a>
+    <a href="#/pants" data-nav="pants">بنطلون</a>
+    <a href="#/tshirts" data-nav="tshirts">تيشيرتات</a>
+    <a href="#/caps" data-nav="caps">كابات</a>
+    <a href="#/coats" data-nav="coats">كوتات</a>
+    <a href="#/shoes" data-nav="shoes">أحذية</a>
+    <a href="#/accessories" data-nav="accessories">إكسسوارات</a>
+  </nav>
+  <div class="tools">
+    <button id="searchBtn" aria-label="بحث"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+    <button id="cartBtn" aria-label="السلة"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8h14l-1 12H6zM9 8a3 3 0 0 1 6 0"/></svg><span id="cartCount" class="count">0</span></button>
+    <button id="burger" class="burger" aria-label="القائمة" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="app">
+<div id="home" class="page">
+  <section class="hero" id="hero">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <div class="hero-in" id="heroIn">
+      <p class="hi">أهلاً بيك في عبّر</p>
+      <h1>نورتنا</h1>
+      <p class="sub">مش مجرد لبس… دي طريقة تِعبّر بيها عن نفسك.</p>
+      <a class="btn" href="#styles">اختار ستايلك</a>
+    </div>
+    <div class="marquee" aria-hidden="true"><div><span>ستريت وير</span><span>قصّات نضيفة</span><span>خامات تستحمل</span><span>ستايلك إنت</span><span>ستريت وير</span><span>قصّات نضيفة</span><span>خامات تستحمل</span><span>ستايلك إنت</span></div></div>
+  </section>
+
+  <section class="intro rv">
+    <h2>إحنا عبّر. بنصمم هدوم للي مش بيحب يشبه حد.</h2>
+    <p>قطع قليلة، قصّات مظبوطة، وخامات بتعيش معاك. من الشارع للسهرة، لبسك بيتكلم قبلك.</p>
+  </section>
+
+  <section class="styles" id="styles">
+    <h2 class="rv">إنت بتدور على إيه؟</h2>
+    <div class="cats" id="catGrid"></div>
+  </section>
+
+  <section class="block"><div class="head rv"><h2>مختارات الأسبوع</h2><a href="#/tshirts">شوف التيشيرتات</a></div><div class="grid" id="featured"></div></section>
+
+  <section class="statement"><p id="stmt">اللبس بيتنسى، الإحساس لأ.</p><p class="sm rv">كل قطعة عندنا بتتصمم عشان تحسّ بيها قبل ما حد يلاحظها.</p></section>
+
+  <section class="block"><div class="head rv"><h2>الأكتر طلباً</h2></div><div class="row" id="trending"></div></section>
+
+  <section class="cta rv"><h2>جاهز تبدأ ستايلك؟</h2><a class="btn light" href="#/coats">اكتشف الكوتات</a></section>
+</div>
+
+<div id="cat" class="page" hidden>
+  <section class="cat-head"><span class="emoji" id="catEmoji"></span><h1 id="catTitle"></h1><p id="catDesc"></p>
+    <div class="filters"><label>ترتيب <select id="sort"><option value="def">الافتراضي</option><option value="lo">السعر: الأقل</option><option value="hi">السعر: الأعلى</option></select></label><button id="favOnly" aria-pressed="false">المفضلة فقط</button></div>
+  </section>
+  <div class="grid pad" id="catGridProducts"></div>
+</div>
+</main>
+
+<footer class="foot">
+  <div><strong class="logo">عبّر</strong><p>ستايل بيحكي عنك.</p></div>
+  <nav aria-label="روابط"><a href="#/pants">بناطيل</a><a href="#/shoes">أحذية</a><a href="#/accessories">إكسسوارات</a></nav>
+  <div class="legal"><small>© 2026 عبّر. كل الحقوق محفوظة.</small><p class="dev">صُمّم وطُوّر بواسطة <a href="#/home" dir="ltr" aria-label="المطور Youssef Boules"><i aria-hidden="true">YB</i><span>Youssef Boules</span></a></p></div>
+</footer>
+
+<div class="overlay" id="searchBox" hidden role="dialog" aria-label="بحث">
+  <div class="sbox"><input id="q" type="search" placeholder="دوّر على قطعة…" aria-label="ابحث"><button id="closeSearch" aria-label="إغلاق">✕</button>
+  <div class="grid small" id="results"></div></div>
+</div>
+
+<aside class="drawer" id="drawer" aria-label="السلة" aria-hidden="true">
+  <div class="dh"><h2>السلة</h2><button id="closeCart" aria-label="إغلاق السلة">✕</button></div>
+  <div id="cartItems" class="items"></div>
+  <div class="df"><div class="tot"><span>الإجمالي</span><b id="total">0</b></div><button class="btn full" id="checkout">إتمام الطلب</button><button class="link" id="clear">تفريغ السلة</button></div>
+</aside>
+<div class="scrim" id="scrim"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
